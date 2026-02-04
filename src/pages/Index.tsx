@@ -76,7 +76,7 @@ const Index = () => {
                   Vezi Produsele
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="text-base px-8 border-cream/50 text-cream hover:bg-cream/10 hover:text-cream">
+              <Button asChild variant="outline" size="lg" className="text-base px-8 border-cream bg-cream/10 text-cream hover:bg-cream/20 hover:text-cream">
                 <Link to="/despre-noi">Despre Noi</Link>
               </Button>
             </motion.div>
