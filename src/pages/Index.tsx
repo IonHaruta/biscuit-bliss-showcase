@@ -5,7 +5,7 @@ import Layout from "@/components/Layout";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-biscuits.jpg";
+import heroImage from "@/assets/hero-hearts.jpg";
 
 const Index = () => {
   const featuredProducts = products.slice(0, 6);
@@ -13,7 +13,7 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
@@ -21,19 +21,19 @@ const Index = () => {
             alt="Biscuiți Daron-Lux"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-transparent" />
+          <div className="absolute inset-0 bg-chocolate/70" />
         </div>
 
         {/* Content */}
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-2xl">
+          <div className="max-w-3xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6">
-                Din 2001 - Calitate și Tradiție
+              <span className="inline-block px-6 py-2 bg-primary/20 text-wheat rounded-full text-sm font-medium mb-6 backdrop-blur-sm">
+                DIN 2001 • REPUBLICA MOLDOVA
               </span>
             </motion.div>
 
@@ -41,50 +41,57 @@ const Index = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6"
+              className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-cream leading-tight mb-6"
             >
-              Începe dimineața
-              <br />
-              <span className="text-primary">cu Noi</span>
+              DARON-LUX
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg text-muted-foreground mb-8 leading-relaxed"
+              className="text-2xl md:text-3xl text-wheat font-serif italic mb-6"
             >
-              Fie că folosiți ca supliment la înghețată, sau pur și simplu în
-              fiecare dimineață la ceai, biscuiții Daron-Lux sunt alegerea
-              perfectă pentru a da start unei zile reușite!
+              Calitate și bun gust!
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+              className="text-lg text-cream/80 mb-10 max-w-xl mx-auto"
+            >
+              Descoperă gama noastră de biscuiți artizanali, produși din
+              ingrediente naturale, fără conservanți.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-wrap gap-4"
+              className="flex flex-wrap justify-center gap-4"
             >
-              <Button asChild size="lg" className="group">
+              <Button asChild size="lg" className="text-base px-8">
                 <Link to="/produse">
                   Vezi Produsele
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg">
+              <Button asChild variant="outline" size="lg" className="text-base px-8 border-cream/50 text-cream hover:bg-cream/10 hover:text-cream">
                 <Link to="/despre-noi">Despre Noi</Link>
               </Button>
             </motion.div>
           </div>
         </div>
 
-        {/* Decorative Elements */}
+        {/* Scroll indicator */}
         <motion.div
-          className="absolute bottom-10 right-10 hidden lg:block"
-          animate={{ y: [0, -10, 0] }}
-          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity }}
         >
-          <div className="w-24 h-24 rounded-full bg-primary/20 blur-2xl" />
+          <div className="w-6 h-10 border-2 border-cream/50 rounded-full flex justify-center pt-2">
+            <div className="w-1.5 h-3 bg-cream/70 rounded-full" />
+          </div>
         </motion.div>
       </section>
 
@@ -176,7 +183,7 @@ const Index = () => {
           >
             <Button asChild variant="outline" size="lg">
               <Link to="/produse">
-                Vezi Toate Produsele
+                Vezi Toate Cele 28 de Produse
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </Button>
@@ -196,7 +203,7 @@ const Index = () => {
               Lăsați-vă seduși de gustul autentic!
             </h2>
             <p className="text-primary-foreground/80 max-w-2xl mx-auto mb-8">
-              Conceputți din produse naturale, de calitate superioară și fără
+              Concepuți din produse naturale, de calitate superioară și fără
               conservanți, biscuiții Daron-Lux poate fi alintul ideal.
             </p>
             <Button
